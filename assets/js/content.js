@@ -50,7 +50,7 @@ const CONTENT = {
     },
     edu: {
       kicker: "Education",
-      title: "Education",
+      title: "The groundwork.",
       edu1: { degree: "Political Science — European Studies and Civilization", note: "Thesis: “Web and political participation.”" },
       edu2: { note: "Awarded Top Student for commitment and for supporting fellow students' growth." }
     },
@@ -116,7 +116,7 @@ const CONTENT = {
     },
     edu: {
       kicker: "Formazione",
-      title: "Formazione",
+      title: "Le fondamenta.",
       edu1: { degree: "Scienze Politiche — European Studies and Civilization", note: "Tesi: “Web and political participation.”" },
       edu2: { note: "Premiato come Top Student per l'impegno dimostrato e per il supporto alla crescita dei compagni di corso." }
     },

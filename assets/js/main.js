@@ -115,23 +115,6 @@
     localStorage.setItem("ga_theme", theme);
   }
 
-  // Custom-property inheritance into ::view-transition-new(root) is flaky on
-  // some desktop browsers (falls back silently), so the reveal origin is
-  // baked directly into the keyframe text instead of read via var().
-  function setRevealOrigin(x, y) {
-    let styleEl = document.getElementById("theme-reveal-style");
-    if (!styleEl) {
-      styleEl = document.createElement("style");
-      styleEl.id = "theme-reveal-style";
-      document.head.appendChild(styleEl);
-    }
-    styleEl.textContent =
-      "@keyframes theme-reveal {" +
-      "from { clip-path: circle(0% at " + x + "px " + y + "px); }" +
-      "to { clip-path: circle(150% at " + x + "px " + y + "px); }" +
-      "}";
-  }
-
   function lerp(a, b, t) { return a + (b - a) * t; }
   function lerpRgb(a, b, t) {
     return "rgb(" + Math.round(lerp(a[0], b[0], t)) + "," + Math.round(lerp(a[1], b[1], t)) + "," + Math.round(lerp(a[2], b[2], t)) + ")";
@@ -201,9 +184,8 @@
       });
     }
 
-    function commitTheme(next, originX, originY) {
+    function commitTheme(next) {
       if (next === document.documentElement.getAttribute("data-theme")) return;
-      setRevealOrigin(originX, originY);
       if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         document.startViewTransition(() => applyTheme(next));
       } else {
@@ -213,14 +195,10 @@
 
     // ---- click / tap (no meaningful pointer movement) ----
     let suppressClick = false;
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       if (suppressClick) { suppressClick = false; return; }
       const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-      const rect = btn.getBoundingClientRect();
-      const isRealClick = e.clientX !== 0 || e.clientY !== 0;
-      const x = isRealClick ? e.clientX : rect.left + rect.width / 2;
-      const y = isRealClick ? e.clientY : rect.top + rect.height / 2;
-      commitTheme(next, x, y);
+      commitTheme(next);
     });
 
     // ---- drag, like a physical switch ----
@@ -254,12 +232,11 @@
       const dx = e.clientX - startX;
       const p = Math.max(0, Math.min(1, startP + dx / THEME_TRAVEL));
       const next = p > 0.5 ? "dark" : "light";
-      const rect = btn.getBoundingClientRect();
 
       requestAnimationFrame(() => {
         setDragTransitions("");
         clearPaint();
-        commitTheme(next, e.clientX, rect.top + rect.height / 2);
+        commitTheme(next);
       });
     }
 

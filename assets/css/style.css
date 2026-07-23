@@ -373,10 +373,17 @@ body [data-i18n].i18n-out {
 .contact-label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 0.5rem; }
 .contact-value { display: block; font-size: 1rem; color: var(--text); }
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--line); padding: 2.5rem 0; }
-.footer-inner { display: flex; justify-content: center; align-items: center; font-size: 0.82rem; color: var(--text-dimmer); }
-.footer-back { color: var(--text-dim); border-bottom: 1px solid transparent; transition: color .3s, border-color .3s; }
-.footer-back:hover { color: var(--accent); border-color: var(--accent); }
+.site-footer { border-top: 1px solid var(--line); }
+.site-footer .footer-back {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 2.5rem 0;
+  font-size: 0.82rem; color: var(--text-dim);
+  /* higher specificity than "body [data-i18n]" so the hover fade isn't
+     clobbered by the language-switch transition on the same element */
+  transition: background .3s ease, color .3s ease,
+    opacity .32s cubic-bezier(.4,0,.2,1), filter .32s cubic-bezier(.4,0,.2,1), transform .32s cubic-bezier(.4,0,.2,1);
+}
+.site-footer .footer-back:hover { background: var(--surface); color: var(--accent); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
@@ -394,15 +401,15 @@ body [data-i18n].i18n-out {
   .stats-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Theme view-transition circular reveal ---------- */
+/* ---------- Theme view-transition: top-down cascade ---------- */
 @supports (view-transition-name: root) {
   ::view-transition-old(root) { animation: none; }
   ::view-transition-new(root) {
-    animation: theme-reveal .7s cubic-bezier(.4, 0, .2, 1);
+    animation: theme-reveal .2s cubic-bezier(.4, 0, .2, 1);
   }
   @keyframes theme-reveal {
-    from { clip-path: circle(0% at var(--reveal-x, 50%) var(--reveal-y, 0%)); }
-    to { clip-path: circle(150% at var(--reveal-x, 50%) var(--reveal-y, 0%)); }
+    from { clip-path: inset(0 0 100% 0); }
+    to { clip-path: inset(0 0 0% 0); }
   }
 }
 
