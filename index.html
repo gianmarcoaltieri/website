@@ -1,118 +1,278 @@
----
-# none
----
-{% include head.html %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gianmarco Altieri — Digital Transformation Leader</title>
+<meta name="description" content="Gianmarco Altieri — Senior business and digital transformation leader. Customer Experience & Revenue Growth Sales Leader at Arsenalia, Strategic Client Manager for LVMH.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    var saved = localStorage.getItem("ga_theme");
+    var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+</head>
+<body>
 
-<body style="overflow-x: hidden;">
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR44SJ3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <div class="container">
-    <div class="row margin-top-large">
-     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <p class="label">Nice to meet you</p>
-        <h1 id="name" style="color:#5E4F45">Gianmarco Altieri, here <span style="font-size:50%; vertical-align: middle;">😎</span></h1>
+<div id="grain"></div>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div id="progress-bar"></div>
+
+<header id="site-header">
+  <nav class="nav container">
+    <a href="#top" class="logo">G·A</a>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#speaking" data-i18n="nav.speaking">Speaking</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="it">IT</button>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      <span class="theme-track">
+        <span class="theme-stars">
+          <i></i><i></i><i></i><i></i>
+        </span>
+        <span class="theme-thumb">
+          <svg class="theme-icon" viewBox="0 0 24 24" width="13" height="13">
+            <g class="theme-rays">
+              <line x1="12" y1="0.5" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23.5"></line>
+              <line x1="0.5" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23.5" y2="12"></line>
+              <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
+              <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
+              <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
+              <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
+            </g>
+            <circle class="theme-core" cx="12" cy="12" r="6"></circle>
+            <circle class="theme-cutout" cx="12" cy="12" r="6"></circle>
+          </svg>
+        </span>
+      </span>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <p class="kicker reveal" data-i18n="hero.kicker">Digital Transformation Leader</p>
+      <h1 class="hero-title">
+        <span class="line" data-split>Gianmarco</span>
+        <span class="line accent" data-split>Altieri</span>
+      </h1>
+      <p class="hero-tagline reveal">
+        <span data-i18n="hero.tagline1">10+ years turning digital ambition</span>
+        <span data-i18n="hero.tagline2">into measurable growth.</span>
+      </p>
+      <p class="hero-role reveal" data-i18n="hero.role">Customer Experience &amp; Revenue Growth Sales Leader — Arsenalia</p>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn btn-magnetic" data-i18n="hero.cta">Get in touch</a>
       </div>
     </div>
-    <div class="row margin-top-small">
-      <div class="col-xs-12 col-sm-5 col-sm-offset-1">
-        <p class="label">What I do</p>
-        <p class="sublabel">I'm a Business Developer in the digital consultancy, system integration and IT industries.</p>
+    <div class="scroll-cue">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <i></i>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container about-grid">
+      <div class="about-media reveal">
+        <div class="portrait-frame">
+          <img src="assets/img/portrait.jpg" alt="Gianmarco Altieri" width="800" height="800">
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-5">
-        <p class="label">Where I work</p>
-        <p class="sublabel">I'm working as Business Developer in alpenite, digital system integrator with italian HQ in Venice.</p>
+      <div class="about-content">
+        <p class="kicker reveal" data-i18n="about.kicker">About</p>
+        <h2 class="reveal" data-i18n="about.title">Started because I liked it. I continue because I enjoy it.</h2>
+        <p class="reveal" data-i18n="about.p1">I'm a senior business and digital transformation leader with over a decade of experience driving growth, partnerships and complex client programs across international consulting and technology environments.</p>
+        <p class="reveal" data-i18n="about.p2">I currently lead the Customer Experience &amp; Revenue Growth domain at Arsenalia — digital commerce, customer experience and platform ecosystems — while remaining Strategic Client Manager for LVMH, a relationship I've built since 2025.</p>
+        <blockquote class="quote reveal" data-i18n="about.quote">While I may not be saving lives, I strive to do work that I love — with the aim of leaving the world a bit better than I found it.</blockquote>
       </div>
     </div>
-    <div class="row margin-top-mid">
-      <div class="col-xs-12"> <img class="img-responsive" src="img/gianmarco-altieri.jpg" alt="Gianmarco Altieri" title="Gianmarco Altieri"> </div>
-    </div>
-    <div class="row margin-top-mid">
-      <div class="col-sm-2 col-sm-offset-1">
-        <p class="label" style="margin-top:24px;">My story</p>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats">
+    <div class="container stats-grid">
+      <div class="stat reveal">
+        <span class="stat-value" data-value="10" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="stats.years.label">Years in digital transformation</span>
       </div>
-      <div class="col-sm-8">
-        <p class="quote">The background</p>
-        <div class="multicol">
-          <p>My digital adventure started <a href="http://sofisticaMente.tumblr.com" target="_blank">selling my study notes (LOL)</a>, during my University studies. Thanks to <strong>H-FARM</strong> and some of its companies (Henable, LIFE, H-FARM Industry), I discovered beautiful and breathtaking things that I "stole" and put in my life backpack: I discovered my love for things like presentation design, interaction design, mobile & web development (still counting). I love talking with the people, working together making the world a better place. I worked for several years in some of the most talented creative agencies, in Italy; the latest, <strong>H-ART, a WPP - AKQA company</strong>.<br>I manage teams, budget and time on digital projects for companies. I've worked also in <strong>Codognotto SpA</strong>, a logistic and international transport company, helping IT and Marketing&Innovation teams managing their projects.<p>Today, in <strong>alpenite</strong>, I'm part of the amazing Sales Team: we help companies finding technological solutions to their needs. Sometimes we help them finding their needs, at first. </p><p>There's always space in my life backpack. <a href="mailto:gianmarcoaltieri@gmail.com"><strong>Drop me a line</strong>!</a></p>
+      <div class="stat reveal">
+        <span class="stat-value" data-value="300">0</span>
+        <span class="stat-label" data-i18n="stats.fte.label">FTEs led — CX & Revenue Growth domain</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-value" data-prefix="€" data-value="40" data-suffix="M">0</span>
+        <span class="stat-label" data-i18n="stats.revenue.label">Sales managed in my business practice</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-value" data-prefix="€" data-value="4" data-suffix="M">0</span>
+        <span class="stat-label" data-i18n="stats.pipeline.label">Average personal pipeline</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <p class="kicker reveal" data-i18n="exp.kicker">Career</p>
+      <h2 class="section-title reveal" data-i18n="exp.title">Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">2026 — Today</span>
+            <h3 data-i18n="exp.role1.title">Customer Experience &amp; Revenue Growth Sales Leader</h3>
+            <p class="timeline-company">Arsenalia · Venezia</p>
+            <p class="timeline-desc" data-i18n="exp.role1.desc">…</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">2025 — Today</span>
+            <h3 data-i18n="exp.role2.title">LVMH Strategic Client Manager</h3>
+            <p class="timeline-company">Arsenalia · Venezia, Paris</p>
+            <p class="timeline-desc" data-i18n="exp.role2.desc">…</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">2024 — 2025</span>
+            <h3 data-i18n="exp.role3.title">Principal Sales</h3>
+            <p class="timeline-company">Alpenite, part of Arsenalia · Venezia</p>
+            <p class="timeline-desc" data-i18n="exp.role3.desc">…</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">2019 — 2024</span>
+            <h3 data-i18n="exp.role4.title">Business Developer</h3>
+            <p class="timeline-company">Alpenite, part of Arsenalia · Venezia</p>
+            <p class="timeline-desc" data-i18n="exp.role4.desc">…</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="earlier-toggle reveal" id="earlier-toggle" aria-expanded="false" data-i18n="exp.earlierShow">
+        Show earlier roles
+      </button>
+
+      <ul class="earlier-list" id="earlier-list" hidden>
+        <li><span class="earlier-year">2018</span><span class="earlier-title" data-i18n="exp.earlier.e1">Operations Manager</span><span class="earlier-company">Boraso</span></li>
+        <li><span class="earlier-year">2017</span><span class="earlier-title" data-i18n="exp.earlier.e2">Digital Project Manager</span><span class="earlier-company">Codognotto</span></li>
+        <li><span class="earlier-year">2016</span><span class="earlier-title" data-i18n="exp.earlier.e3">Digital Project Manager</span><span class="earlier-company">H-ART AKQA, part of WPP — Ducati</span></li>
+        <li><span class="earlier-year">2014–15</span><span class="earlier-title" data-i18n="exp.earlier.e4">Digital Project Manager</span><span class="earlier-company">Life Interaction, part of H-FARM</span></li>
+        <li><span class="earlier-year">2013–14</span><span class="earlier-title" data-i18n="exp.earlier.e5">Interaction Designer</span><span class="earlier-company">H-FARM</span></li>
+        <li><span class="earlier-year">2012–13</span><span class="earlier-title" data-i18n="exp.earlier.e6">Web Strategist</span><span class="earlier-company">H-Enable, part of H-FARM</span></li>
+        <li><span class="earlier-year">2011–12</span><span class="earlier-title" data-i18n="exp.earlier.e7">Web Strategist</span><span class="earlier-company">Masarà Group</span></li>
+        <li><span class="earlier-year">2011–12</span><span class="earlier-title" data-i18n="exp.earlier.e8">Co-Founder</span><span class="earlier-company">RovigoDuePuntoZero</span></li>
+        <li><span class="earlier-year">2010–12</span><span class="earlier-title" data-i18n="exp.earlier.e9">Owner</span><span class="earlier-company">Sofisticamente</span></li>
+        <li><span class="earlier-year">2010–11</span><span class="earlier-title" data-i18n="exp.earlier.e10">Content Creator</span><span class="earlier-company">Skimbu</span></li>
+        <li><span class="earlier-year">2008</span><span class="earlier-title" data-i18n="exp.earlier.e11">Back Office Loans</span><span class="earlier-company">Banca Adige Po</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking" class="section speaking">
+    <div class="container">
+      <p class="kicker reveal" data-i18n="speaking.kicker">Public voice</p>
+      <h2 class="section-title reveal" data-i18n="speaking.title">Speaking &amp; Press</h2>
+      <ul class="speaking-list">
+        <li class="reveal"><span class="speaking-year">2025</span><span data-i18n="speaking.s1">Milano Finanza interview, “Il brand che emoziona”</span></li>
+        <li class="reveal"><span class="speaking-year">2025</span><span data-i18n="speaking.s2">Arsenalia hosts Marc Sondermann and Shopify — co-talk</span></li>
+        <li class="reveal"><span class="speaking-year">2025</span><span data-i18n="speaking.s3">Netcomm Forum Milano — talk with Shopify</span></li>
+        <li class="reveal"><span class="speaking-year">2024</span><span data-i18n="speaking.s4">B2B Day Düsseldorf — co-talk</span></li>
+        <li class="reveal"><span class="speaking-year">2023</span><span data-i18n="speaking.s5">Netcomm Forum Milano — talk with Bonfiglioli</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section education">
+    <div class="container">
+      <p class="kicker reveal" data-i18n="edu.kicker">Education</p>
+      <h2 class="section-title reveal" data-i18n="edu.title">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <span class="edu-grade">107/110</span>
+          <h3>University of Padua</h3>
+          <p class="edu-degree" data-i18n="edu.edu1.degree">Political Science — European Studies and Civilization</p>
+          <p class="edu-note" data-i18n="edu.edu1.note">Thesis: “Web and political participation.”</p>
+        </div>
+        <div class="edu-card reveal">
+          <span class="edu-grade">100/100</span>
+          <h3>Istituto Tecnico Commerciale Statale E. De Amicis, Rovigo</h3>
+          <p class="edu-note" data-i18n="edu.edu2.note">Awarded Top Student for commitment and for supporting fellow students' growth.</p>
         </div>
       </div>
     </div>
-    <div class="row margin-top-mid">
-      <div class="col-sm-2 col-sm-offset-1">
-        <p class="label">Previous Experiences</p>
-      </div>
-      <div class="col-sm-8">
-        <div class="row">
-          <div class="col-sm-4">
-          <p class="business">Boraso.com</p>
-            <p class="role">Project Manager & Operations Manager</p>
-            <p class="year">Gen 2018 ↦ May 2019</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">Codognotto</p>
-            <p class="role">Digital Project Manager</p>
-            <p class="year">Dec 2016 ↦ Dec 2017</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">H-ART</p>
-            <p class="role">Project Manager</p>
-            <p class="year">Sep 2015 ↦ Mar 2016</p>
-          </div>
-        </div>
-        <div class="row margin-top">
-          <div class="col-sm-4">
-            <p class="business">H-FARM</p>
-            <p class="role">Project Manager</p>
-            <p class="year">Sep 2015 ↦ Mar 2016</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">LIFE Interaction</p>
-            <p class="role">Project Manager</p>
-            <p class="year">Apr 2014 ↦ Sep 2015</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">LIFE Interaction</p>
-            <p class="role">Interaction Designer</p>
-            <p class="year">Apr 2013 ↦ Apr 2014</p>
-          </div>
-        </div>
-        <div class="row margin-top">
-          <div class="col-sm-4">
-            <p class="business">Henable</p>
-            <p class="role">Web Strategist</p>
-            <p class="year">Sep 2012 ↦ Jun 2013</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">Thounds Inc.</p>
-            <p class="role">Social Media Intern</p>
-            <p class="year">Dec 2011 ↦ Mar 2012</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="business">Masarà Group</p>
-            <p class="role">Web Strategist</p>
-            <p class="year">Oct 2011 ↦ Oct 2012</p>
-          </div>
-          <div class="col-sm-4">
-          </div>
-        </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container contact-inner">
+      <p class="kicker reveal" data-i18n="contact.kicker">Get in touch</p>
+      <h2 class="reveal" data-i18n="contact.title">Let's create something valuable together.</h2>
+      <p class="contact-sub reveal" data-i18n="contact.sub">Open to conversations about digital commerce, customer experience and growth partnerships.</p>
+      <a href="mailto:gianmarcoaltieri@gmail.com?subject=New%20contact%20request%20from%20gianmarcoaltieri.com" class="btn btn-large btn-magnetic reveal" data-i18n="contact.cta">Let's connect</a>
+
+      <div class="contact-links reveal">
+        <a href="mailto:gianmarcoaltieri@gmail.com">
+          <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
+          <span class="contact-value">gianmarcoaltieri@gmail.com</span>
+        </a>
+        <a href="tel:+393426676088" id="phone-link">
+          <span class="contact-label" data-i18n="contact.phoneLabel">Phone</span>
+          <span class="contact-value">+39 342 66 76 088</span>
+        </a>
+        <a href="https://www.linkedin.com/in/gianmarcoaltieri/" target="_blank" rel="noopener" class="contact-links-full">
+          <span class="contact-label" data-i18n="contact.linkedinLabel">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/gianmarcoaltieri</span>
+        </a>
       </div>
     </div>
-    <div class="row margin-top-mid">
-      <div class="col-sm-2 col-sm-offset-1">
-        <p class="label" style="margin-top:24px;">Contacts</p>
-      </div>
-      <div class="col-sm-8">
-        <p class="quote"><a href="mailto:gianmarcoaltieri@gmail.com">Some ☕? Drop me a line to schedule.</a></p>
-        <div class="row margin-top">
-          <div class="col-sm-4"><a href="https://www.facebook.com/gianmarco.altieri">Facebook ↬</a></div>
-          <div class="col-sm-4"><a href="https://it.linkedin.com/in/gianmarcoaltieri
-">Linkedin ↬</a></div>
-          <div class="col-sm-4"><a href="http://gianmarcoaltieri.it">Sito in italiano ↬</a></div>
-        </div>
-      </div>
-    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#top" class="footer-back" data-i18n="footer.back">Back to top</a>
   </div>
-  {% include footer.html %}
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
+</html>
