@@ -96,9 +96,22 @@
   }
 
   function initLang() {
+    // A redirect (e.g. from gianmarcoaltieri.it) can force a language via
+    // ?lang=it|en — takes priority over the saved preference so the .it
+    // domain can land visitors straight into Italian.
+    const params = new URLSearchParams(location.search);
+    const urlLang = params.get("lang");
+    const forcedLang = urlLang === "it" || urlLang === "en" ? urlLang : null;
+
     const saved = localStorage.getItem("ga_lang");
-    const lang = saved || "en";
+    const lang = forcedLang || saved || "en";
     applyLang(lang, false);
+
+    if (forcedLang) {
+      params.delete("lang");
+      const query = params.toString();
+      history.replaceState(null, "", location.pathname + (query ? "?" + query : "") + location.hash);
+    }
 
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
