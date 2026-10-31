@@ -381,7 +381,6 @@ body [data-i18n].i18n-out {
 .contact-label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 0.5rem; }
 .contact-value { display: block; font-size: 1rem; color: var(--text); }
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--line); }
 .footer-signature { display: flex; justify-content: center; padding: 4.5rem 0 3rem; color: var(--text); }
 .signature-svg { height: clamp(88px, 14vw, 120px); width: auto; overflow: visible; opacity: .9; }
 
@@ -394,7 +393,7 @@ body [data-i18n].i18n-out {
 @keyframes sig-draw { to { stroke-dashoffset: 0; } }
 .site-footer .footer-back {
   display: flex; align-items: center; justify-content: center;
-  width: 100%; padding: 2.5rem 0;
+  width: 100%; padding: 2.5rem 0; border-top: 1px solid var(--line);
   font-size: 0.82rem; color: var(--text-dim);
   /* higher specificity than "body [data-i18n]" so the hover fade isn't
      clobbered by the language-switch transition on the same element */
