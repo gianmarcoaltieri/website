@@ -384,6 +384,21 @@
     update();
   }
 
+  /* ---------- Footer signature: handwritten reveal ---------- */
+  function initSignature() {
+    const sig = document.querySelector(".footer-signature");
+    if (!sig) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    sig.classList.add("sig-ready");
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        sig.classList.add("in-view");
+        io.disconnect();
+      }
+    }, { threshold: 0.6 });
+    io.observe(sig);
+  }
+
   /* ---------- Stat counters ---------- */
   function initCounters() {
     const stats = document.querySelectorAll(".stat-value");
@@ -480,6 +495,7 @@
     initHero();
     initReveal();
     initHeroScroll();
+    initSignature();
     initCounters();
     initMagnetic();
     initEarlier();
