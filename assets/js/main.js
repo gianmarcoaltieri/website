@@ -334,6 +334,40 @@
     });
   }
 
+  /* ---------- Hero title: split apart on scroll ---------- */
+  // "Gianmarco" drifts right, "Altieri" left, both fading and blurring with
+  // scroll progress; scrolling back up reassembles them.
+  function initHeroScroll() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const title = document.querySelector(".hero-title");
+    const first = title && title.querySelector(".line:nth-child(1) .line-inner");
+    const second = title && title.querySelector(".line:nth-child(2) .line-inner");
+    if (!first || !second) return;
+
+    let ticking = false;
+    function update() {
+      ticking = false;
+      const y = Math.max(0, window.scrollY);
+      // Finish the effect while the title is still on screen (~70% of the way to its bottom edge).
+      const range = Math.max(160, (title.getBoundingClientRect().bottom + y) * 0.7);
+      const p = Math.min(1, y / range);
+      const eased = p * p * (3 - 2 * p);
+      const dx = eased * window.innerWidth * 0.6;
+      const opacity = Math.max(0, 1 - eased * 1.15);
+      const filter = p === 0 ? "" : "blur(" + (eased * 16).toFixed(1) + "px)";
+      title.classList.toggle("is-scrolled", p > 0);
+      first.style.transform = p === 0 ? "" : "translate3d(" + dx.toFixed(1) + "px,0,0)";
+      second.style.transform = p === 0 ? "" : "translate3d(" + (-dx).toFixed(1) + "px,0,0)";
+      first.style.opacity = second.style.opacity = p === 0 ? "" : opacity.toFixed(3);
+      first.style.filter = second.style.filter = filter;
+    }
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
   /* ---------- Stat counters ---------- */
   function initCounters() {
     const stats = document.querySelectorAll(".stat-value");
@@ -429,6 +463,7 @@
     initProgress();
     initHero();
     initReveal();
+    initHeroScroll();
     initCounters();
     initMagnetic();
     initEarlier();
