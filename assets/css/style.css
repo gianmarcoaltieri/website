@@ -54,6 +54,10 @@ body, body * {
   transition-timing-function: ease;
 }
 
+/* Theme view-transition handles the cross-fade; skip per-element colour tweens (the toggle keeps its own). */
+.theme-switching body,
+.theme-switching body *:not(.theme-toggle):not(.theme-toggle *) { transition: none !important; }
+
 ::selection { background: var(--accent); color: #000; }
 ::-moz-selection { background: var(--accent); color: #000; }
 

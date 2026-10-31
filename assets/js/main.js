@@ -200,7 +200,13 @@
     function commitTheme(next) {
       if (next === document.documentElement.getAttribute("data-theme")) return;
       if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        document.startViewTransition(() => applyTheme(next));
+        // The view transition already cross-fades the whole page, so the
+        // per-element colour transitions are switched off for its duration;
+        // otherwise they'd re-animate on top of the snapshot and desync.
+        const root = document.documentElement;
+        root.classList.add("theme-switching");
+        const vt = document.startViewTransition(() => applyTheme(next));
+        vt.finished.finally(() => root.classList.remove("theme-switching"));
       } else {
         applyTheme(next);
       }
