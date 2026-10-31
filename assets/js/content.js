@@ -12,7 +12,7 @@ const CONTENT = {
     },
     about: {
       kicker: "About",
-      title: "Started because I liked it. I continue because I enjoy it.",
+      title: "Started because I liked, continue 'case I enjoy it.",
       p1: "I'm a senior business and digital transformation leader with over a decade of experience driving growth, partnerships and complex client programs across international consulting and technology environments.",
       p2: "I currently lead the Customer Experience &amp; Revenue Growth domain at Arsenalia — digital commerce, customer experience and platform ecosystems — while remaining Strategic Client Manager for LVMH, a relationship I've built since 2025. I combine commercial leadership, strategic thinking and hands-on delivery governance to scale digital capabilities and unlock new revenue for global organizations.",
       quote: "While I may not be saving lives, I strive to do work that I love — with the aim of leaving the world a bit better than I found it."
