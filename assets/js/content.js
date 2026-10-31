@@ -60,7 +60,6 @@ const CONTENT = {
       sub: "I love to bring people together and digital always gave me the possibility to express my self and my ambition.",
       cta: "Let's connect",
       emailLabel: "Email",
-      phoneLabel: "Phone",
       linkedinLabel: "LinkedIn"
     },
     footer: { back: "Back to top" }
@@ -126,7 +125,6 @@ const CONTENT = {
       sub: "Mi piace mettere in contatto le persone, e il digitale mi ha sempre dato la possibilità di esprimere me stesso e la mia ambizione.",
       cta: "Connettiamoci",
       emailLabel: "Email",
-      phoneLabel: "Telefono",
       linkedinLabel: "LinkedIn"
     },
     footer: { back: "Torna su" }
