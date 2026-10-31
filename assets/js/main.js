@@ -126,6 +126,8 @@
     document.documentElement.setAttribute("data-theme", theme);
     document.getElementById("theme-toggle").setAttribute("aria-pressed", String(theme === "light"));
     localStorage.setItem("ga_theme", theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = theme === "light" ? "#faf6ee" : "#0c0b0a";
   }
 
   function lerp(a, b, t) { return a + (b - a) * t; }

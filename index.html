@@ -46,9 +46,18 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
   (function () {
-    var saved = localStorage.getItem("ga_theme");
-    var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    var saved = null;
+    try { saved = localStorage.getItem("ga_theme"); } catch (e) {}
+    // No saved choice: follow the visitor's local clock (light 07:00-19:00, dark otherwise).
+    var hour = new Date().getHours();
+    var theme = saved || (hour >= 7 && hour < 19 ? "light" : "dark");
     document.documentElement.setAttribute("data-theme", theme);
+    // Browser UI tint follows the chosen theme, not the OS setting.
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.remove(); });
+    var meta = document.createElement("meta");
+    meta.name = "theme-color";
+    meta.content = theme === "light" ? "#faf6ee" : "#0c0b0a";
+    document.head.appendChild(meta);
   })();
 </script>
 </head>
