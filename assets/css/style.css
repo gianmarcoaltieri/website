@@ -383,6 +383,12 @@ body [data-i18n].i18n-out {
 /* ---------- Footer ---------- */
 .footer-signature { display: flex; justify-content: center; padding: 4.5rem 0 3rem; color: var(--text); }
 .signature-svg { height: clamp(88px, 14vw, 120px); width: auto; overflow: visible; opacity: .9; }
+/* Discourage casual saving/copying: no selection, drag, or iOS long-press callout (not real protection) */
+.footer-signature, .signature-svg {
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none; -webkit-user-drag: none;
+}
+.signature-svg { pointer-events: none; }
 
 /* Hand-written reveal: each pen stroke is drawn in order through a mask (see initSignature) */
 /* offset > 1 keeps the round line caps of not-yet-drawn strokes out of sight */

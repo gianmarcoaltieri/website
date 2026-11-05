@@ -388,6 +388,9 @@
   function initSignature() {
     const sig = document.querySelector(".footer-signature");
     if (!sig) return;
+    ["contextmenu", "dragstart", "selectstart"].forEach((type) => {
+      sig.addEventListener(type, (e) => e.preventDefault());
+    });
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     sig.classList.add("sig-ready");
     const io = new IntersectionObserver((entries) => {
